@@ -1,0 +1,12 @@
+div.footer {
+	background-color: #244980;
+	width: 100%;
+	font-size: 8pt;
+	color: #fff;
+	text-align: center;
+}
+
+div.footer a:link    { color:#fff;}
+div.footer a:visited { color:#fff; }
+div.footer a:hover   { color:#fff; }
+div.footer a:active  { color:#fff; }
