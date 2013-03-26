@@ -24,7 +24,7 @@ define({
 		insert: { after: 'headerView' },
 		bind: {
 			to: { $ref: 'contacts' },
-			comparator: 'lastName', // TODO: Create a custom comparator to sort by lastName then firstName
+			comparator: { module: 'app/list/compareByLastFirst' },
 			bindings: {
 				firstName: 'label#firstName',
 				lastName: 'label#lastName'
