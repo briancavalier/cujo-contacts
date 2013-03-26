@@ -4,5 +4,7 @@ define({
 		lastName: 'Last Name',
 		phone: 'Phone Number',
 		email: 'E-Mail'
-	}
+	},
+	save: 'Save',
+	clear: 'Clear'
 });

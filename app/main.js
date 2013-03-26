@@ -15,19 +15,21 @@ define({
 		},
 		insert: { first: 'root' }
 	},
-	
+
+	contactsContainer: { $ref: 'dom.first!.contacts-view-container', at: 'root' },
+
 	listView: {
 		render: {
 			template: {module: 'text!app/list/template.html' },
 			css: { module: 'css!app/list/style.css' }
 		},
-		insert: { after: 'headerView' },
+		insert: { first: 'contactsContainer' },
 		bind: {
 			to: { $ref: 'contacts' },
 			comparator: 'lastName', // TODO: Create a custom comparator to sort by lastName then firstName
 			bindings: {
-				firstName: 'label#firstName',
-				lastName: 'label#lastName'
+				firstName: '.first-name',
+				lastName: '.last-name'
 			}
 		}
 	},
@@ -38,7 +40,7 @@ define({
 			replace: { module: 'i18n!app/edit/strings' },
 			css: { module: 'css!app/edit/style.css' }
 		},
-		insert: { after: 'listView' }
+		insert: { last: 'contactsContainer' }
 	},
 
 	editForm: {
@@ -51,6 +53,7 @@ define({
 	footerView: {
 		render: {
 			template: { module: 'text!app/footer/template.html' },
+			replace: { module: 'i18n!app/footer/strings.js' },
 			css: { module: 'css!app/footer/style.css' }
 		},
 		insert: { last: 'root' }
@@ -69,7 +72,7 @@ define({
 				'submit' : 'form.getValues | contacts.update'
 			},
 			listView: {
-				'click:li':'contacts.edit'
+				'click:.contact':'contacts.edit'
 			}
 		},
 		connect: {

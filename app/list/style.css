@@ -1,20 +1,19 @@
-div.listDiv {
-	width: 200px;
-	background-color: #8faefc;
-	border-right: 2px solid #244980;
-	height: 100% !important;
-	float: left;
-}
-
-div.listDivContainer {
+.contact-list-view {
+	position: absolute;
 	height: 100%;
-	overflow: auto;	
+	width: 30%;
 }
 
-div.listDiv ul li {
+.contact-list-view .contact-list {
+	margin: .5em 1em;
+	padding: 0;
+}
+
+.contact-list-view .contact {
+    margin: .5em 0;
 	list-style: none;
 }
 
-div.listDiv {
+.contact-list-view {
 	overflow-y: scroll;
 }
